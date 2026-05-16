@@ -1,4 +1,4 @@
-# Implicit Graph Alignment (IGA)
+# Implicit Task Graph Alignment (IGA)
 
 Code for the paper: "Few-Shot In-Context Imitation Learning via Implicit Graph Alignment" (Published at CoRL 2023).
 [Project Webpage](https://www.robot-learning.uk/implicit-graph-alignment), [Paper](https://arxiv.org/pdf/2310.12238.pdf)
