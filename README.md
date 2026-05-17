@@ -1,4 +1,4 @@
-# Implicit Task Graph Alignment (IGA)
+# Implicit Task Graph Alignment (ITGA)
 
 
 
