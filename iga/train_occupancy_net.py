@@ -21,14 +21,14 @@ class LightningAE(L.LightningModule):
         self.loss_fn = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(2.))
         self.loss_buffer = torch.zeros(config['log_every_n_steps'])
         self.config = config
-
+        
     def training_step(self, batch, batch_idx):
         y, targets = self.model.forward(batch)
         if torch.any(torch.isnan(y)):
             print('NaN in output.')
         if torch.any(torch.isnan(targets)):
             print('NaN in targets.')
-        loss = self.loss_fn(y, targets)
+        loss = self.loss_fn(y, targets)#target=label
         self.loss_buffer[self.global_step % self.config['log_every_n_steps']] = loss.item()
         self.log('train_loss', self.loss_buffer.mean(), prog_bar=True, on_step=True, on_epoch=True,
                  batch_size=len(targets))
